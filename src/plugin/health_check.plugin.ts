@@ -16,7 +16,6 @@ const health_check_plugin: FastifyPluginAsync = async (fastify) => {
         try{
             reply.code(200).send(server_up)
         } catch (error) {
-
             reply.code(500).send(server_down)
         }
     })
