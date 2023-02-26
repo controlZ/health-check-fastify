@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node --files ./src/index.ts",
+    "start": "FASTIFY_ADRESS=0.0.0.0 ts-node --files ./src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
