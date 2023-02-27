@@ -10,9 +10,6 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
-
-
 # Step 2
 ## base image for Step 2: Node 14-alpine(light weight)
 FROM node:18-alpine
