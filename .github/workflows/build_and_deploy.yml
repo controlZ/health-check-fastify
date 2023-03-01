@@ -53,4 +53,4 @@ jobs:
           sudo docker stop fastify
           sudo docker rm fastify
           sudo docker run --name "fastify" -d -p 3000:3000 953799088616.dkr.ecr.ap-northeast-2.amazonaws.com/github_action_test:latest
-          docker rmi $(docker images --filter "dangling=true" --quiet --no-trunc)
+          sudo docker rmi $(docker images --filter "dangling=true" --quiet --no-trunc)
