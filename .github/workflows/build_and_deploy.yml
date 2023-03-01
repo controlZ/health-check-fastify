@@ -62,3 +62,4 @@ jobs:
         script: |
           whoami
           sudo docker pull 953799088616.dkr.ecr.ap-northeast-2.amazonaws.com/github_action_test:latest
+          sudo docker run -d -p 3000:3000 953799088616.dkr.ecr.ap-northeast-2.amazonaws.com/github_action_test:latest
