@@ -33,10 +33,14 @@ jobs:
         docker build -t github_action_test .
         docker tag github_action_test:latest 953799088616.dkr.ecr.ap-northeast-2.amazonaws.com/github_action_test:latest
         docker push 953799088616.dkr.ecr.ap-northeast-2.amazonaws.com/github_action_test:latest
+
   deploy:
+
     name: Deploy
     runs-on: ubuntu-latest
+
     steps:
+
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -57,5 +61,4 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           whoami
-          aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 953799088616.dkr.ecr.ap-northeast-2.amazonaws.com
           sudo docker pull 953799088616.dkr.ecr.ap-northeast-2.amazonaws.com/github_action_test:latest
