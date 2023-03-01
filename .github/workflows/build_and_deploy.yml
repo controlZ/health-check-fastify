@@ -33,3 +33,15 @@ jobs:
         docker build -t github_action_test .
         docker tag github_action_test:latest 953799088616.dkr.ecr.ap-northeast-2.amazonaws.com/github_action_test:latest
         docker push 953799088616.dkr.ecr.ap-northeast-2.amazonaws.com/github_action_test:latest
+
+  deploy:
+    - name: Deploy
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          whoami
+          docker pull 953799088616.dkr.ecr.ap-northeast-2.amazonaws.com/github_action_test:latest
