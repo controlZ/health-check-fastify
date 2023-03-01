@@ -8,4 +8,4 @@ const server = fastify({
 console.log(process.uptime())
 server.register(health_check_route)
 
-server.listen({port: 3000})
+server.listen({host: "0.0.0.0", port: 3000})
