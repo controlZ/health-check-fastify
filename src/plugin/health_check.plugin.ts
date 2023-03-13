@@ -1,5 +1,6 @@
 import {FastifyPluginAsync} from "fastify";
 
+//health check api
 const health_check_plugin: FastifyPluginAsync = async (fastify) => {
     fastify.get('/health', async (request, reply) => {
         const ok = {
